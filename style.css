@@ -1,0 +1,275 @@
+@font-face {
+    font-family: "Brinnan";
+    src: url("assets/Brinnan\ Regular.otf");
+}
+
+@font-face {
+    font-family: "BC Alphaline";
+    src: url("assets/BC-Alphapipe-L-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("assets/Inter-Regular.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Brinnan";
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(#36104C,#7597de);
+    overflow-x: hidden;
+
+}
+
+header{
+position: absolute;
+top:0;
+left:0;
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+z-index: 10000;
+}
+
+header .logo{
+    color: #fff;
+    font-weight: 700;
+    font-family: "BC Alphaline";
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color : #fff;
+    border-radius:  20px;
+}
+
+header ul li a:hover, 
+header ul li a.active
+{
+    background : #fff;
+    color: #36104C
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+section::before{
+
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background:  linear-gradient(to top,#1c0522, transparent);
+    z-index: 1000;
+}
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+section img#moon{
+
+    transform: scale(0.5) translateY(-260px) ;
+
+}
+section img#mountain_front{
+   z-index: 10;
+
+}
+#text{
+    position: absolute;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 2.75vw;
+    z-index: 9;
+    font-family: "Inter";
+    text-align: center;
+
+}
+#btn{
+    text-decoration: none;
+    padding: 8px 30px;
+    border-radius: 40px;
+    display: inline-block;
+    background: #fff;
+    color: #2b1055;
+    font-size: 1.25em;
+    z-index: 9; 
+    transform: translateY(100px);
+}
+
+.sec{
+    position: relative;
+    padding: 100px;
+    background: #36104C;
+}
+
+.sec h2{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.sec p{
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.sec ul li{
+    font-size: 1.25em;
+    color: #fff;
+    font-family: "Inter";
+}
+
+.fold3{
+    position: relative;
+    padding: 100px;
+    background: #1c0522;
+    display: flex;
+    justify-content:baseline;
+    align-items:center;
+    overflow: hidden;
+    background-color: #36104C;
+}
+
+/* fold4 css */
+#card-desc{
+    font-size: 1em;
+    color: black;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    font-family: "Inter";
+}
+
+
+/* fold5 css */
+.cardno-list {
+    display: flex;
+    padding: 3rem;
+    overflow-x: scroll;
+}
+
+.cardno-list::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.cardno-list::-webkit-scrollbar-thumb {
+    background: #201c29;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+}
+
+.cardno-list::-webkit-scrollbar-track {
+    background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
+}
+
+
+.cardno {
+    height: 500px;
+    width: 400px;
+    min-width: 250px;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: #17141d;
+    box-shadow: -1rem 0 3rem #000;
+    display: flex;
+    flex-direction: column;
+    transition: .2s;
+    margin: 0;
+    scroll-snap-align: start;
+    clear: both;
+    position: relative;
+}
+
+.cardno:focus-within~.cardno, .cardno:hover~.cardno {
+    transform: translateX(130px);
+}
+
+.cardno:hover {
+    transform: translateY(-1rem);
+}
+
+.cardno:not(:first-child) {
+    margin-left: -130px;
+}
+
+
+
+.cardno-footer {
+    margin-top: auto;
+}
+
+
+.cardno-footer h2 {
+    font-size: 20px;
+    margin: .25rem 0 auto;
+    text-decoration: none;
+    color: white;
+    border: 0;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+.cardno-author {
+    margin: 1rem 0 0;
+    display: grid;
+    align-items: center;
+    position: relative;
+}
+
+.author-avatar {
+    grid-area: auto;
+    align-self: start;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.author-avatar img {
+    width: 260px;
+    height: 260px;
+    display: block;
+    overflow: hidden;
+    margin: 10px 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+#content-dsktop {display: none;}
+}
+
